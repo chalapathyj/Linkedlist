@@ -128,3 +128,18 @@ class List:
             print("showing node :", cur_node.data)
             cur_node = cur_node.nxt
 
+
+newnde = List()
+newnde._make_node(4)
+# newnde.insert_after(4)
+newnde.show()
+print(newnde.noOfNodes)
+#newnde.insert_after(3, 5)
+newnde.insertAfter(4, 5)
+newnde.insertAfter(4, 6)
+newnde.insertBack(6, 1)
+newnde.insertAfter(1, 3)
+newnde.insertFront(4, 1)
+
+newnde.show()
+print("No of nodes: ", newnde.noOfNodes)
