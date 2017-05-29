@@ -1,55 +1,49 @@
+#/*Importing modules Stack and Queue*/#
 from Queue import qu
 from Stack import st
 
-
-class DS:
+#/*Start of Iterator function for stack and queue*/#
+class DsItr:
 
     def __init__(self, ds):
-        self.ds = ds
+        self.ds = ds.head
 
     def __iter__(self):
         return self
 
-    def next(self):
-        if self.ds.next is not None:
-            self.ds = self.ds.next
-            return self.ds
+    def __next__(self):
+        if self.ds is not None:
+            data = self.ds.data
+            self.ds = self.ds.nxt
+            return data
         else:
             raise StopIteration()
+#/*End of Iterator function for stack and queue*/#
 
-
+#/*start of Polymorphism for displaying the contents*/#
 def display(datastruct):
     datastruct.display()
+#/*End of Polymorphism for displaying the contents*/#
 
+#/*start of calling iterator on stack and queue*/#
+def itrat(dsobj):
+  for x in DsItr(dsobj):
+    print (x)
+#/*End of calling iterator on stack and queue*/#
+
+#/*calling display function using Polymorphism on stack and queue*/"
 display(st)
 st.pop()
-display(st)
-#for x in DS(st):
-    #print (x.data)
-# st1 = Stack()
-# qu1 = Queue()
-
-
-# st1.push(5)
-# st1.push(35)
-# st1.push(25)
-# st1.push(5)
-# st1.push(65)
-# st1.push(45)
-# st1.push(95)
-# st1.push(65)
-# st1.push(45)
-
-# st1.display()
-
-# qu1.add(5)
-# qu1.add(35)
-# qu1.add(25)
-# qu1.add(5)
-# qu1.add(65)
-# qu1.add(45)
-# qu1.add(95)
-# qu1.add(65)
-# qu1.add(45)
-
-# qu1.display()
+st.push(222)
+display(qu)
+qu.remove()
+qu.add(333)
+#/*End of calling display function using Polymorphism on stack and queue*/"
+#/*calling iterator function on stack and queue*/#
+print ("Start of iterator function on stack:")
+itrat(st)
+print ("End of iterator function on stack")
+print ("Start of iterator function on queue:")
+itrat(qu)
+print ("End of iterator function on queue")
+#/*End of calling iterator function on stack and queue*/#
